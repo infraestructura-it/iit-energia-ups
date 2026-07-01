@@ -1,6 +1,6 @@
 # IIT Energía & UPS — CLAUDE.md
 
-**v1.2** — actualizado 2026-07-01
+**v1.2** — actualizado 2026-07-01 (numeros de issue confirmados con gh issue list)
 
 ## Propósito
 
@@ -61,8 +61,7 @@ no como checklist duplicado aquí. El commit que lo resuelve debe incluir `close
 - Backlog activo: `gh issue list --repo infraestructura-it/iit-energia-ups --label "mejora-continua"`
 - Todo el historial: `gh issue list --repo infraestructura-it/iit-energia-ups --state all`
 
-Issues de mejora continua abiertos al momento de este corte (confirmar números reales
-con `gh issue list`, pueden variar según el orden en que se crearon):
+Issues de mejora continua abiertos al momento de este corte:
 
 | # | Pendiente |
 |---|-----------|
@@ -70,8 +69,8 @@ con `gh issue list`, pueden variar según el orden en que se crearon):
 | #4 | Agregar WhatsApp/teléfono real en contacto.html |
 | #5 | Reemplazar logo SVG simplificado por IIT-CORE definitivo |
 | #6 | Definir dominio final del sitio |
-| #7 | Ampliar tabla de normativa.html con equipos/marcas reales |
-| #8 | Confirmar nombres reales de dispositivos IoT/plataforma en monitoreo.html |
+| #7 | Confirmar nombres reales de dispositivos IoT/plataforma en monitoreo.html |
+| #8 | Ampliar tabla de normativa.html con equipos/marcas reales |
 
 Issue #1 (checklist original) y #2 (bug de despliegue Zona de Clientes/Monitoreo) — cerrados.
 
