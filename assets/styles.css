@@ -49,7 +49,7 @@ nav{
 .chip-text{font-family:var(--font-display); font-weight:800; font-size:15px; letter-spacing:.5px; white-space:nowrap;}
 .chip-text span{color:var(--amber);}
 
-.nav-links{display:flex; gap:30px; font-size:13px; color:var(--text-dim); align-items:center;}
+.nav-links{display:flex; gap:22px; font-size:12.5px; color:var(--text-dim); align-items:center; flex-wrap:wrap; row-gap:6px;}
 .nav-links a{transition:color .2s; white-space:nowrap;}
 .nav-links a:hover{color:var(--amber);}
 .nav-links a.active{color:var(--amber);}
@@ -259,6 +259,27 @@ tbody tr:hover td{background:var(--surface);}
 .contact-side .row:last-child{border-bottom:none;}
 .contact-side .row span:first-child{color:var(--text-dim);}
 .note-box{margin-top:22px; padding:14px 16px; border:1px dashed var(--line); border-radius:3px; font-size:12px; color:var(--text-dim);}
+
+/* ---------- PORTAL CALLOUT (zona-clientes) ---------- */
+.portal-box{
+  border:1px dashed var(--amber); border-radius:4px; background:var(--surface);
+  padding:34px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;
+}
+.portal-box .ic-wrap{
+  width:44px; height:44px; border:1px solid var(--line); border-radius:4px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.portal-box .body{flex:1; min-width:220px;}
+.portal-box h4{font-family:var(--font-display); font-size:16px; margin-bottom:8px;}
+.portal-box p{font-size:13.5px; color:var(--text-dim); margin-bottom:18px; max-width:520px;}
+.portal-box .actions{display:flex; gap:12px; flex-wrap:wrap;}
+
+/* ---------- DEVICE TAGS (monitoreo) ---------- */
+.tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+.dtag{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.5px; color:var(--text-dim);
+  border:1px solid var(--line); padding:6px 10px; border-radius:2px;
+}
 
 /* ---------- CTA ---------- */
 .cta{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:90px 0; text-align:center;}
