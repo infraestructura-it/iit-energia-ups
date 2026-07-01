@@ -1,6 +1,6 @@
 # IIT Energía & UPS — CLAUDE.md
 
-**v1.1** — actualizado 2026-07-01
+**v1.2** — actualizado 2026-07-01
 
 ## Propósito
 
@@ -20,7 +20,7 @@ proceso.html            → 5 pasos del flujo de trabajo, detallado
 tecnologia.html        → diagrama de bloques UPS true online doble conversión + PFC
 zona-clientes.html     → landing informativa: inventario por marca, calibración, fallas
                           comunes — enlaza al portal real (sistema de órdenes de servicio,
-                          iit-ordenes-servicio-v2), URL pendiente de reemplazar
+                          iit-ordenes-servicio-v2), URL pendiente de reemplazar (ver issues)
 monitoreo.html          → software de monitoreo propio + dispositivos IoT a la medida,
                           proceso de implementación, comparación vs. monitoreo genérico
 normativa.html          → tabla de rangos + IEEE-519 / RETIE / NTC 5001
@@ -45,21 +45,41 @@ diferenciado de los acentos ya usados en Datacenter/Redes/IA del sitio corporati
 - **zona-clientes.html** es solo la landing informativa. El panel real (inventario,
   calibración, fallas) vive en el repo del sistema de órdenes de servicio
   (`iit-ordenes-servicio-v2`, Supabase). El botón "Ingresar a mi Zona de Cliente" tiene
-  un `href="#"` placeholder hasta que se defina la URL pública de ese sistema.
+  un `href="#"` placeholder hasta que se defina la URL pública de ese sistema — ver
+  issue de seguimiento abajo.
 
 ## Despliegue
 
 GitHub Pages, rama `main`, raíz `/`. Repo: `infraestructura-it/iit-energia-ups`.
 URL: `https://infraestructura-it.github.io/iit-energia-ups/`
 
-## Pendientes
+## Trazabilidad (issue → fix → commit → CLAUDE.md)
 
-- [ ] Reemplazar el `href="#"` de "Ingresar a mi Zona de Cliente" por la URL real de
-      iit-ordenes-servicio-v2
-- [ ] Agregar WhatsApp/teléfono real en `contacto.html` (aviso visible dejado en el archivo)
-- [ ] Reemplazar el chip SVG simplificado por el logo IIT-CORE definitivo
-- [ ] Definir dominio final (subdominio propio vs. GitHub Pages por defecto)
-- [ ] Confirmar datos reales de equipos/marcas si se quiere ampliar la tabla de normativa.html
-- [ ] Confirmar nombres reales de dispositivos IoT/plataforma de monitoreo si se quieren
-      citar marcas o modelos propios en monitoreo.html
+Mismo patrón que `iit-ordenes-servicio-v2`: cada pendiente vive como issue individual,
+no como checklist duplicado aquí. El commit que lo resuelve debe incluir `closes #N`.
+
+- Backlog activo: `gh issue list --repo infraestructura-it/iit-energia-ups --label "mejora-continua"`
+- Todo el historial: `gh issue list --repo infraestructura-it/iit-energia-ups --state all`
+
+Issues de mejora continua abiertos al momento de este corte (confirmar números reales
+con `gh issue list`, pueden variar según el orden en que se crearon):
+
+| # | Pendiente |
+|---|-----------|
+| #3 | Reemplazar URL placeholder de Zona de Clientes |
+| #4 | Agregar WhatsApp/teléfono real en contacto.html |
+| #5 | Reemplazar logo SVG simplificado por IIT-CORE definitivo |
+| #6 | Definir dominio final del sitio |
+| #7 | Ampliar tabla de normativa.html con equipos/marcas reales |
+| #8 | Confirmar nombres reales de dispositivos IoT/plataforma en monitoreo.html |
+
+Issue #1 (checklist original) y #2 (bug de despliegue Zona de Clientes/Monitoreo) — cerrados.
+
+## Bugs resueltos (referencia rápida)
+
+- **#2** — Zona de Clientes y Monitoreo no aparecían en producción. Causa raíz: el
+  credential helper de git seguía usando el token cacheado de `automatizacion-it`
+  después de `gh auth switch`. Fix: `gh auth setup-git` para resincronizar git con la
+  cuenta activa de gh.
+
 
